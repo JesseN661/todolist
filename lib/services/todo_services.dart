@@ -55,3 +55,15 @@ static Stream<QuerySnapshot> getTodosStream() {
     await batch.commit();
   }
 }
+
+class TodoServices {
+  static FirebaseFirestore get _firestore => FirebaseFirestore.instance;
+  
+  static CollectionReference get _todosCollection {
+    // STUDENTS: Get current user ID and use it in collection path
+    // Example: return _firestore.collection('users/$userId/todos');
+    return _firestore.collection('todos'); // Temporary - update this
+  }
+  
+  // ... rest of your existing functions
+}
